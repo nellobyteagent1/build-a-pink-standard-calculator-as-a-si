@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.calculator {
+  width: 340px;
+  background: #fff0f3;
+  border-radius: 24px;
+  box-shadow:
+    0 20px 60px rgba(233, 30, 99, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.display {
+  background: linear-gradient(135deg, #ec407a, #d81b60);
+  padding: 28px 24px 20px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.display-expression {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  min-height: 22px;
+  word-break: break-all;
+}
+
+.display-current {
+  color: #fff;
+  font-size: 42px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  word-break: break-all;
+  max-width: 100%;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  padding: 16px;
+  gap: 10px;
+}
+
+.btn {
+  height: 62px;
+  border: none;
+  border-radius: 16px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn.num {
+  background: #fff;
+  color: #444;
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.08);
+}
+
+.btn.num:hover {
+  background: #fce4ec;
+}
+
+.btn.fn {
+  background: #fce4ec;
+  color: #c2185b;
+}
+
+.btn.fn:hover {
+  background: #f8bbd0;
+}
+
+.btn.op {
+  background: #f06292;
+  color: #fff;
+}
+
+.btn.op:hover {
+  background: #ec407a;
+}
+
+.btn.equals {
+  background: linear-gradient(135deg, #ec407a, #c2185b);
+  color: #fff;
+}
+
+.btn.equals:hover {
+  background: linear-gradient(135deg, #f06292, #d81b60);
+}
+
+.btn.zero {
+  grid-column: span 2;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 100%;
+    max-width: 340px;
+    margin: 16px;
+  }
+
+  .btn {
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .display-current {
+    font-size: 36px;
+  }
+}
